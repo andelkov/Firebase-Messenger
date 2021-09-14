@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>966885602853-3oi3elaccroe4ufmu1g24khq9j3tkdvi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.966885602853-3oi3elaccroe4ufmu1g24khq9j3tkdvi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBopqnQBwHn2bS1t4zAo5JnIUD75ruTKfo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>966885602853</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.andelkov.Firebase-Messenger</string>
+	<key>PROJECT_ID</key>
+	<string>fir-messenger-372fb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-messenger-372fb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:966885602853:ios:d873355a55b52af712f1cc</string>
+</dict>
+</plist>
