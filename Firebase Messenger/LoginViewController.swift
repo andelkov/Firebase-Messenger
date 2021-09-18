@@ -146,6 +146,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     private func loginUser() {
         
+        FirebaseUserListener.shared.loginUserWithEmail(email: emailTextfieldOutlet.text!, password: passwordTextfieldOutlet.text!) { (error, isEmailVerified) -> Bool in
+            if error == nil {
+                if isEmailVerified {
+                    
+                    self.goToApp()
+                } else {
+                    ProgressHUD.showFailed("Please verify your email.")
+                    self.resendEmailButtonOutlet.isHidden = false
+                }
+            } else {
+                ProgressHUD.showFailed(error?.localizedDescription)
+                completion(error, false)
+            }
+        }
+        
     }
     private func registerUser( ) {
         
@@ -166,5 +181,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //MARK: - Navigation
+    
+    private func goToApp() {
+        print("goto app")
+    }
 }
 
