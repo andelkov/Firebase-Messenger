@@ -157,7 +157,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             } else {
                 ProgressHUD.showFailed(error?.localizedDescription)
-                completion(error, false)
+                
             }
         }
         
