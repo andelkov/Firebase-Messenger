@@ -42,6 +42,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         updateUIFor(login: true)
         setupBackgroundTap()
         setupTextFieldDelegates()
+        setupBackgroundTap()
     }
 
     //MARK: - IBActions
@@ -86,6 +87,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         updatePLaceholderLabels(textField: textField)
     }
     
+    private func setupBackgroundTap() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    
+    @objc func backgroundTap() {
+        view.endEditing(false)
+    }
+    
+    
     
     //MARK: - Animation
     
@@ -117,14 +129,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    private func setupBackgroundTap() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func backgroundTap() {
-        view.endEditing(false)
-    }
     
     //MARK: - Helpers
     private func isDataInputedFor(type: String ) -> Bool {
@@ -138,6 +142,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return emailTextfieldOutlet.text != ""
         }
     }
+    
+    
     
 }
 

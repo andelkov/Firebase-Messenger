@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4571BAA80E2AA3D6B04BFD81 /* Pods_Firebase_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F47FA93AEE353E1D0071B0 /* Pods_Firebase_Messenger.framework */; };
+		A112B33E26F5641D00871E23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112B33D26F5641C00871E23 /* User.swift */; };
+		A112B34226F565D100871E23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112B34126F565D100871E23 /* Constants.swift */; };
 		A1B1B50E26F0AC46007A560D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1B50D26F0AC46007A560D /* AppDelegate.swift */; };
 		A1B1B51026F0AC46007A560D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1B50F26F0AC46007A560D /* SceneDelegate.swift */; };
 		A1B1B51226F0AC46007A560D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1B51126F0AC46007A560D /* LoginViewController.swift */; };
@@ -15,11 +17,15 @@
 		A1B1B51726F0AC49007A560D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B1B51626F0AC49007A560D /* Assets.xcassets */; };
 		A1B1B51A26F0AC49007A560D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B1B51826F0AC49007A560D /* LaunchScreen.storyboard */; };
 		A1B1B54526F0B4AB007A560D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1B1B54426F0B4AB007A560D /* GoogleService-Info.plist */; };
+		A1EC161726F56A7F00E92211 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC161626F56A7F00E92211 /* FCollectionReference.swift */; };
+		A1EC161D26F56B4000E92211 /* FirebaseUserListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC161C26F56B4000E92211 /* FirebaseUserListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A159441D7722DF5649B2211 /* Pods-Firebase Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Messenger/Pods-Firebase Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		6DDCBD7A4FC4F9AFE49279FB /* Pods-Firebase Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Messenger.release.xcconfig"; path = "Target Support Files/Pods-Firebase Messenger/Pods-Firebase Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		A112B33D26F5641C00871E23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A112B34126F565D100871E23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1B1B50A26F0AC46007A560D /* Firebase Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B1B50D26F0AC46007A560D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1B1B50F26F0AC46007A560D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +35,8 @@
 		A1B1B51926F0AC49007A560D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B1B51B26F0AC49007A560D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1B1B54426F0B4AB007A560D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A1EC161626F56A7F00E92211 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
+		A1EC161C26F56B4000E92211 /* FirebaseUserListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserListener.swift; sourceTree = "<group>"; };
 		D7F47FA93AEE353E1D0071B0 /* Pods_Firebase_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -44,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A112B34026F5642400871E23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A112B33D26F5641C00871E23 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A1B1B50126F0AC46007A560D = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +84,9 @@
 				A1B1B50D26F0AC46007A560D /* AppDelegate.swift */,
 				A1B1B50F26F0AC46007A560D /* SceneDelegate.swift */,
 				A1B1B51126F0AC46007A560D /* LoginViewController.swift */,
+				A112B34126F565D100871E23 /* Constants.swift */,
+				A1EC161926F56B0900E92211 /* FirebaseHelpers */,
+				A112B34026F5642400871E23 /* Model */,
 				A1B1B51326F0AC46007A560D /* Main.storyboard */,
 				A1B1B51626F0AC49007A560D /* Assets.xcassets */,
 				A1B1B51826F0AC49007A560D /* LaunchScreen.storyboard */,
@@ -75,6 +94,15 @@
 				A1B1B54426F0B4AB007A560D /* GoogleService-Info.plist */,
 			);
 			path = "Firebase Messenger";
+			sourceTree = "<group>";
+		};
+		A1EC161926F56B0900E92211 /* FirebaseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC161626F56A7F00E92211 /* FCollectionReference.swift */,
+				A1EC161C26F56B4000E92211 /* FirebaseUserListener.swift */,
+			);
+			path = FirebaseHelpers;
 			sourceTree = "<group>";
 		};
 		BC4219DE2C2B8D4F0B363E0F /* Frameworks */ = {
@@ -209,8 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EC161726F56A7F00E92211 /* FCollectionReference.swift in Sources */,
+				A112B34226F565D100871E23 /* Constants.swift in Sources */,
+				A112B33E26F5641D00871E23 /* User.swift in Sources */,
 				A1B1B51226F0AC46007A560D /* LoginViewController.swift in Sources */,
 				A1B1B50E26F0AC46007A560D /* AppDelegate.swift in Sources */,
+				A1EC161D26F56B4000E92211 /* FirebaseUserListener.swift in Sources */,
 				A1B1B51026F0AC46007A560D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
