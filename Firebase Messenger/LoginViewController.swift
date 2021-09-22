@@ -123,6 +123,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updatePLaceholderLabels(textField: UITextField) {
+        
         switch textField {
         case emailTextfieldOutlet:
             emailTextfieldOutlet.text = textField.hasText ? "Email" : ""
@@ -214,7 +215,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Navigation
     
     private func goToApp() {
-        print("goto app")
+        
+        let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainView") as UITabBarController
+        
+        mainView.modalPresentationStyle = .fullScreen
+        self.present(mainView, animated: true, completion: nil)
     }
 }
 
