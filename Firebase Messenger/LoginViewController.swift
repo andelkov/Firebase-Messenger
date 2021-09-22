@@ -82,9 +82,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Setup
     
     private func setupTextFieldDelegates() {
-        emailTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        passwordTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        repeatPassTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        emailTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .editingDidBegin)
+        passwordTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .editingDidBegin)
+        repeatPassTextfieldOutlet.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .editingDidBegin)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -126,11 +126,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         switch textField {
         case emailTextfieldOutlet:
-            emailTextfieldOutlet.text = textField.hasText ? "Email" : ""
+            emailTextfieldOutlet.text = !textField.hasText ? "Email" : ""
         case passwordTextfieldOutlet:
-            passwordTextfieldOutlet.text = textField.hasText ? "Password" : ""
+            passwordTextfieldOutlet.text = !textField.hasText ? "Password" : ""
         default:
-            repeatPassTextfieldOutlet.text = textField.hasText ? "Repeat password" : ""
+            repeatPassTextfieldOutlet.text = !textField.hasText ? "Repeat password" : ""
         }
         
     }
