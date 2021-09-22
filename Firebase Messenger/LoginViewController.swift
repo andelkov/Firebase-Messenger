@@ -57,7 +57,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
+        
+        
         if isDataInputedFor(type: "password") {
+            resetPassword()
             //login or register
         } else {
             ProgressHUD.showFailed("Email is required.")
@@ -65,7 +68,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func resendEmailButtonPressed(_ sender: UIButton) {
         if isDataInputedFor(type: "password") {
-            //resend verification email
+            resendVerificationEmail()
         } else {
             ProgressHUD.showFailed("Email is required.")
         }
@@ -147,18 +150,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private func loginUser() {
         
         FirebaseUserListener.shared.loginUserWithEmail(email: emailTextfieldOutlet.text!, password: passwordTextfieldOutlet.text!) { (error, isEmailVerified) -> Bool in
+            
             if error == nil {
                 if isEmailVerified {
                     
                     self.goToApp()
+                    return true
                 } else {
                     ProgressHUD.showFailed("Please verify your email.")
                     self.resendEmailButtonOutlet.isHidden = false
+                    return false
                 }
             } else {
                 ProgressHUD.showFailed(error?.localizedDescription)
-                
+                return false
             }
+            
         }
         
     }
@@ -181,6 +188,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    private func resetPassword() {
+        FirebaseUserListener.shared.resendPasswordFor(email: emailTextfieldOutlet.text!) { (error) in
+            
+            if error == nil {
+                ProgressHUD.showSuccess("Reset link was sent to your email")
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        }
+        
+    }
+    
+    private func resendVerificationEmail() {
+        
+        FirebaseUserListener.shared.resendPasswordFor(email: emailTextfieldOutlet.text!) { (error) in
+            
+            if error == nil {
+                ProgressHUD.showSuccess("New verification email was sent.")
+            } else {
+                ProgressHUD.showError(error!.localizedDescription)
+            }
+        }
+    }
     //MARK: - Navigation
     
     private func goToApp() {
